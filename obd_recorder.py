@@ -74,7 +74,7 @@ class OBD_Recorder():
             self.log_file.write(log_string+"\n")
             print "Webservice call"
             url = "http://www.vehitracker.com/DesktopModules/VehiDataCollector/API/VehiDataCollector.ashx/CreateEntry"
-            data =  {"vehicleId":1,	"entryName":"CarOn","entryDescription":"The Tahoe Started",	"entrySource":"OBDII" }
+            data =  '{"vehicleId":1,	"entryName":"CarOn","entryDescription":"The Tahoe Started",	"entrySource":"OBDII" }'
             data_json = json.dumps(data)
             headers = {'Content-type': 'application/json'}
             response = requests.post(url, data=data_json, headers=headers)
