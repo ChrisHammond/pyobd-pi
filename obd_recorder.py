@@ -7,7 +7,8 @@ import obd_sensors
 from datetime import datetime
 import time
 import getpass
-
+import requests
+import json
 
 from obd_utils import scanSerial
 
@@ -71,6 +72,13 @@ class OBD_Recorder():
             gear = self.calculate_gear(results["rpm"], results["speed"])
             log_string = log_string #+ "," + str(gear)
             self.log_file.write(log_string+"\n")
+            print "Webservice call"
+            url = "http://www.vehitracker.com/DesktopModules/VehiDataCollector/API/VehiDataCollector.ashx/CreateEntry"
+            data =  {"vehicleId":1,	"entryName":"CarOn","entryDescription":"The Tahoe Started",	"entrySource":"OBDII" }
+            data_json = json.dumps(data)
+            headers = {'Content-type': 'application/json'}
+            response = requests.post(url, data=data_json, headers=headers)
+            
 
             
     def calculate_gear(self, rpm, speed):
