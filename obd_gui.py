@@ -1,9 +1,8 @@
 #!/usr/bin/env python
 ###########################################################################
 # obd_gui.py
-#
 # Created by Paul Bartek (pbartek@cowfishstudios.com)
-#
+# updated by Chris Hammond (chris@christoc.com)
 ###########################################################################
 #-------------------------------------------------------------------------------
 
@@ -20,7 +19,7 @@ from obd_sensors import *
 
 # OBD variables
 BACKGROUND_FILENAME = "bg_black.jpg"
-LOGO_FILENAME 		= "cowfish.png"
+LOGO_FILENAME 		= "christoc-logo.png"
 
 #-------------------------------------------------------------------------------
 
